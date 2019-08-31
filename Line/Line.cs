@@ -57,11 +57,11 @@ namespace Line
                     }
                     if (p2.Y < 0)
                     {
-                        gps.DrawLine(pen, new Point((int)(-b / k), 0), new Point((int)(p1.X + ((-b / k) - p1.X) * 10), (p1.Y + p1.Y * 10)));
+                        gps.DrawLine(pen, new Point((int)(-b / k), 0), new Point((int)((-b / k) + ((-b / k) - p1.X) * 10), (p1.Y + p1.Y * 10)));
                     }
                     else if (p2.Y > Height)
                     {
-                        gps.DrawLine(pen, new Point((int)((ClientRectangle.Height - b) / k), ClientRectangle.Height), new Point((int)(p1.X + (((ClientRectangle.Height - b) / k) - p1.X) * 10), p1.Y + -p1.Y * 10));
+                        gps.DrawLine(pen, new Point((int)((ClientRectangle.Height - b) / k), ClientRectangle.Height), new Point((int)(((ClientRectangle.Height - b) / k) + (((ClientRectangle.Height - b) / k) - p1.X) * 10), p1.Y - (ClientRectangle.Height - p1.Y) * 10));
                     }
                 }
             }
