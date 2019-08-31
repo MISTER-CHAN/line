@@ -38,7 +38,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Line";
             this.Opacity = 0.5D;
-            this.Text = "Form1";
+            this.Text = "Line";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Line_MouseClick);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Line_MouseMove);
             this.Resize += new System.EventHandler(this.Line_Resize);
