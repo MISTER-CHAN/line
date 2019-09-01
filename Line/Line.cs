@@ -15,7 +15,7 @@ namespace Line
         readonly Color transparent = Color.FromArgb(0xff, 0xff, 0xff, 0xff);
         double b, k;
         private Graphics gps;
-        private readonly Pen pen = new Pen(Color.Black, 2f);
+        private readonly Pen pen = new Pen(Color.Black);
         Point p1, p2;
 
         public Line()
@@ -49,15 +49,15 @@ namespace Line
                     b = p1.Y - k * p1.X;
                     if (p2.X < 0)
                     {
-                        gps.DrawLine(pen, new Point(0, (int)b), new Point(0 + p1.X * 10, (int)(b + (b - p1.Y) * 10)));
+                        gps.DrawLine(pen, new Point(0, (int)b), new Point(p1.X * 10, (int)(b + (b - p1.Y) * 10)));
                     }
                     else if (p2.X > Width)
                     {
-                        gps.DrawLine(pen, new Point(Width, (int)(b + k * ClientRectangle.Width)), new Point(0 + -p1.X * 10, (int)(b + (p1.Y - b) * 10)));
+                        gps.DrawLine(pen, new Point(ClientRectangle.Width, (int)(b + k * ClientRectangle.Width)), new Point(p1.X - (ClientRectangle.Width - p1.X) * 10, (int)((b + k * ClientRectangle.Width) + ((b + k * ClientRectangle.Width) - p1.Y) * 10)));
                     }
                     if (p2.Y < 0)
                     {
-                        gps.DrawLine(pen, new Point((int)(-b / k), 0), new Point((int)((-b / k) + ((-b / k) - p1.X) * 10), (p1.Y + p1.Y * 10)));
+                        gps.DrawLine(pen, new Point((int)(-b / k), 0), new Point((int)((-b / k) + ((-b / k) - p1.X) * 10), p1.Y + p1.Y * 10));
                     }
                     else if (p2.Y > Height)
                     {
