@@ -12,6 +12,8 @@ namespace Line
 {
     public partial class Line : Form
     {
+        const int RADIUS = 18;
+
         readonly Color transparent = Color.FromArgb(0xff, 0xff, 0xff, 0xff);
         double b, k;
         private Graphics gps;
@@ -65,10 +67,17 @@ namespace Line
                     }
                 }
             }
+            else
+            {
+                gps.Clear(transparent);
+                gps.DrawEllipse(pen, e.X - RADIUS, e.Y - RADIUS, RADIUS * 2, RADIUS * 2);
+            }
         }
 
         private void Line_Resize(object sender, EventArgs e)
         {
+            gps.Flush();
+            gps.Dispose();
             gps = CreateGraphics();
         }
     }
