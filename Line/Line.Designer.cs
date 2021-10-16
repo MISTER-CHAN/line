@@ -32,13 +32,18 @@
             // 
             // Line
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 562);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Line";
             this.Opacity = 0.5D;
             this.Text = "Line";
+            this.TopMost = true;
+            this.Activated += new System.EventHandler(this.Line_Activated);
+            this.Deactivate += new System.EventHandler(this.Line_Deactivate);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Line_KeyPress);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Line_MouseClick);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Line_MouseMove);
             this.Resize += new System.EventHandler(this.Line_Resize);
