@@ -15,8 +15,7 @@ namespace Line
     {
         const int RADIUS = 16;
 
-        bool isHacking = true;
-        readonly Color transparent = Color.FromArgb(0xff, 0xff, 0xff, 0xff);
+        readonly Color transparent = Color.FromArgb(0xff, 0x0, 0x80, 0x0);
         double b, k;
         private Graphics gps;
         private readonly Pen pen = new Pen(Color.Black);
@@ -46,23 +45,9 @@ namespace Line
             }
         }
 
-        private void Line_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            switch (e.KeyChar)
-            {
-                case ' ':
-                    isHacking = !isHacking;
-                    if (isHacking)
-                        TransparencyKey = Color.Empty;
-                    else
-                        TransparencyKey = Color.White;
-                    break;
-            }
-        }
-
         private void Line_Deactivate(object sender, EventArgs e)
         {
-            TransparencyKey = Color.White;
+            TransparencyKey = BackColor;
         }
 
         private void Line_MouseMove(object sender, MouseEventArgs e)
